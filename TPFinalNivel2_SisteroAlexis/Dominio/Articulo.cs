@@ -24,6 +24,9 @@ namespace Dominio
         public string ImagenUrl { get; set; }
         public decimal Precio { get; set; }
 
+
+        //metodo de interfas util para no ordenar manualmente con el metodo de la burbuja 
+        //aunque internamente creo que es un metodo de la burbuja.
         public int CompareTo(Articulo other)
         {
 

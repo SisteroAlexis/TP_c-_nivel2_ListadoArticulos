@@ -48,7 +48,7 @@ namespace Carga
                     aux.Categoria.Descripcion = datos.Lector.GetString(5);
                     //Nos asegurames que la imagen no sea null para evitar conflictos al cargar la imagen. 
                     //aunque tambien utilizo otras medidas de seguridad para la imagen. Despues veo si se puede sacar este if
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    if (!(datos.Lector["ImagenUrl"] is DBNull)) // aca si uso []
                     { aux.ImagenUrl = datos.Lector.GetString(6); }
 
                     /*trabajo con decimal pero nose si es el mejor tipo de dato. Vi que en el foro se podia generar una especie

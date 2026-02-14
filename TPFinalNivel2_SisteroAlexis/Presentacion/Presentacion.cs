@@ -60,7 +60,7 @@ namespace Presentacion
 
             try
             {
-
+                //valido el dgv para que al usar el filtro no se quede con una imagen a pesar de no existir nada en el dgv
                 if (Validardgv())
                 {
 
@@ -103,6 +103,7 @@ namespace Presentacion
 
             try
             {
+                //valido tener seleccionado un articulo
                 if (Validardgv())
                 {
                     //creo un nuevo articulo. no es necesario instanciarlo ya que va a hacer referencia a otro objeto
@@ -128,7 +129,7 @@ namespace Presentacion
         //eliminarArticulo
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ArticuloCarga carga = new ArticuloCarga(); //creo que tenia que poner esto como variable global.
+            ArticuloCarga carga = new ArticuloCarga(); //creo que tenia que poner esto como variable global. aunque nose si da problemas
             
 
             try
@@ -313,10 +314,11 @@ namespace Presentacion
             finally
             {
                 dgvArticulos.Focus(); //si no pongo no tiene ningun articulo seleccionado y puede dar error con algunos botones
+                                      //creo que ya lo arregle era una prop del dgv que toque pero dejo esto comentado, no lastima a nadie
             }
-           
 
-            
+
+
 
         }
        

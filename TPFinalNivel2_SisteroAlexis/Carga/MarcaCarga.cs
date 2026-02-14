@@ -10,10 +10,11 @@ namespace Carga
 {
     public class MarcaCarga
     {
-        private AccesoDatos datos = new AccesoDatos();
+      
 
         public List<Marca> Listar()
         {
+            AccesoDatos datos = new AccesoDatos();
             List<Marca> lista = new List<Marca>();
 
             try

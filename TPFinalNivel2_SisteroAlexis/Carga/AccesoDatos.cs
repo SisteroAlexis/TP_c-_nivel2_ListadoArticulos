@@ -93,7 +93,7 @@ namespace Carga
             if (lector != null)
                 lector.Close();
             conexion.Close();
-            //agrego esto ya que uso una variable global en ArticulosCarga. y me aseguro de siempre limpiar mis variables.
+            //agrego esto y me aseguro de siempre limpiar mis variables.
             //nota: si me olvido un finally y CerrarConeccion puedo hacer que comando elimine cosas o cree caos (lo aprendi por las malas)
             comando.Parameters.Clear();
         }

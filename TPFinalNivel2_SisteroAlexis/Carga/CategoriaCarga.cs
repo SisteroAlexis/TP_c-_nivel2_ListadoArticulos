@@ -10,9 +10,10 @@ namespace Carga
 {
     public class CategoriaCarga
     {
-        private AccesoDatos datos = new AccesoDatos();
+        
         public List<Categoria> Listar()
         {
+            AccesoDatos datos = new AccesoDatos();
             List<Categoria> lista = new List<Categoria>();
 
             try
