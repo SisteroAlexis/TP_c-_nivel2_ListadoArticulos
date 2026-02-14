@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Carga/Carga.csproj" Id="a8102f89-8378-461f-86ca-209aaf6163f6" />
+  <Project Path="Dominio/Dominio.csproj" Id="96342027-5a5a-497b-9db9-dbcc97e5b4d5" />
+  <Project Path="Presentacion/Presentacion.csproj" Id="741ad897-02ed-4c72-aa47-a87e3a63d01f" />
+</Solution>
