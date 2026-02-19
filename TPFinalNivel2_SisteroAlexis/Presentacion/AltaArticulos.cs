@@ -83,6 +83,8 @@ namespace Presentacion
             }
             catch(IOException Iex )
             {
+                //Tambien creo que se puede configurara para guardarlo con la fecha y hora y que nunca de error al guardar la imagen
+                //DateTime.Now se puede usar.
                 MessageBox.Show(Iex.Message + "\nError, La imagen que intenta cargar ya fue cargada en otro articulo \n cambiale el nombre a su imagen o cargue otra imagen");
             }
             catch (OverflowException oex)

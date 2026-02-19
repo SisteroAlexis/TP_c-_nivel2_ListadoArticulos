@@ -176,9 +176,9 @@ namespace Presentacion
                 List<Articulo> listafiltrada = new List<Articulo>();
                 string filtro = txtFiltro.Text;
 
-                /*Primero recargamos la info de la lista de articulos. porque?
+                /*Primero verificamos que lista usar. porque?
                 Porque si usamos primero el filtro avanzado y despues este filtro muestra mal la informacion.
-                Anlo similar solia pasar con el ordenamiento. pero de esta forma valido todo los posiblles errores.
+                Algo similar solia pasar con el ordenamiento. pero de esta forma valido todo los posiblles errores.
                 es mas que nada porque el dgv puede tener un valor y la listaArticulos otro y eso da a confusiones
                 si no hago esto el progrma funciona, pero no como quiero. */
                 if (listaArticulo_FiltroAvanzado !=null)
