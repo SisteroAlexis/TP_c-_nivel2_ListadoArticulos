@@ -181,8 +181,8 @@ namespace Presentacion
                 Algo similar solia pasar con el ordenamiento. pero de esta forma valido todo los posiblles errores.
                 es mas que nada porque el dgv puede tener un valor y la listaArticulos otro y eso da a confusiones
                 si no hago esto el progrma funciona, pero no como quiero. */
-                if (listaArticulo_FiltroAvanzado !=null)
-                listaArticulo = listaArticulo_FiltroAvanzado;
+                if (listaArticulo_FiltroAvanzado != null)
+                    listaArticulo = listaArticulo_FiltroAvanzado;
 
                 //IsNullOrWhiteSpace similar que IsNullOrEmpty pero mejor para este momento ya que verifica si hay espacios en blanco
                 if (!string.IsNullOrWhiteSpace(filtro))
@@ -204,6 +204,11 @@ namespace Presentacion
             {
 
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dgvArticulos.Focus(); //si no pongo no tiene ningun articulo seleccionado y puede dar error con algunos botones
+                                      //creo que ya lo arregle era una prop del dgv que toque pero dejo esto comentado, no lastima a nadie
             }
 
         }
