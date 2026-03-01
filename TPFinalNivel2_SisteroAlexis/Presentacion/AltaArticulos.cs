@@ -21,6 +21,7 @@ namespace Presentacion
         //creamos un articulo nulo //para que no se carge los datos cuando ponemos agregar
         private Articulo articulo = null; //esto seria un atributo tambien 
         private OpenFileDialog archivo = null;
+        private  string VerificarCodigo = null;
 
 
         //constructor por defecto
@@ -148,6 +149,7 @@ namespace Presentacion
 
                 MessageBox.Show(ex.Message);
             }
+            finally { VerificarCodigo = txtCodigo.Text; }
         }
 
         //para ver la imagen que cargamos
@@ -237,22 +239,25 @@ namespace Presentacion
             //valido que el codigo sea unico lo pongo en un try por las dudas
             try
             {
-                ArticuloCarga p = new ArticuloCarga();
-                List<Articulo> list = new List<Articulo>();
-                list = p.Listar();
-                foreach (Articulo a in list)
+                if (VerificarCodigo !=txtCodigo.Text)
                 {
-                    if (a.Codigo == txtCodigo.Text)
+                    ArticuloCarga p = new ArticuloCarga();
+                    List<Articulo> list = new List<Articulo>();
+                    list = p.Listar();
+                    foreach (Articulo a in list)
                     {
-                      DialogResult resultado = MessageBox.Show("El codigo ya existe. \n ¿queres ver los detalles para saber los codigos?", "Codigo Repetido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                        if (resultado == DialogResult.Yes)
+                        if (a.Codigo == txtCodigo.Text)
                         {
-                            Detalles ventana = new Detalles(list);
-                            ventana.ShowDialog();
+                            DialogResult resultado = MessageBox.Show("El codigo ya existe. \n ¿queres ver los detalles para saber los codigos?", "Codigo Repetido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                Detalles ventana = new Detalles(list);
+                                ventana.ShowDialog();
+                                txtCodigo.Focus();
+                            }
                             txtCodigo.Focus();
+                            return true;
                         }
-                        txtCodigo.Focus();
-                        return true;
                     }
                 }
             }
